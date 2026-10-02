@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mashallah Photography | Malindi</title>
+	<meta name="description" content="Mashallah Photography — professional photography and videography for portraits, events, birthdays, weddings and memorable moments.">
+	<style>
+		*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+		body{font-family:Arial,Helvetica,sans-serif;background:#080808;color:white;line-height:1.6}
+		nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+		.logo{font-size:23px;font-weight:bold;letter-spacing:1px}.logo span,footer span{color:#d4af37}
+		nav ul{display:flex;list-style:none;gap:25px}nav a{color:white;text-decoration:none;font-size:14px;transition:.3s}nav a:hover{color:#d4af37}
+		.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px 60px;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.8)),url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat}
+		.hero-content{max-width:850px}.hero small,.section-title small{color:#d4af37;letter-spacing:4px;text-transform:uppercase;font-weight:bold}.hero h1{font-size:clamp(48px,8vw,95px);line-height:1;margin:20px 0}.hero h1 span,.about-text h2 span{color:#d4af37}.hero p{max-width:650px;margin:auto;color:#ddd;font-size:18px}
+		.buttons{margin-top:35px;display:flex;gap:15px;justify-content:center;flex-wrap:wrap}.btn{display:inline-block;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:bold;transition:.3s}.btn-gold{background:#d4af37;color:black}.btn-gold:hover{transform:translateY(-3px)}.btn-outline{border:1px solid white;color:white}.btn-outline:hover{background:white;color:black}
+		section{padding:90px 7%}.section-title{text-align:center;margin-bottom:50px}.section-title small{letter-spacing:3px}.section-title h2{font-size:42px;margin-top:8px}
+		.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:1200px;margin:auto}.about-image{height:500px;border-radius:20px;background:url("https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=1000&q=85") center/cover}.about-text h2{font-size:42px;margin-bottom:20px}.about-text p{color:#bbb;margin-bottom:18px}
+		.services{background:#0d0d0d}.service-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.service-card{background:#151515;padding:35px 25px;border-radius:18px;border:1px solid #222;transition:.3s}.service-card:hover{transform:translateY(-8px);border-color:#d4af37}.service-icon{font-size:40px;margin-bottom:15px}.service-card h3{margin-bottom:10px}.service-card p{color:#aaa}
+		.gallery-grid{max-width:1300px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gallery-item{height:360px;overflow:hidden;border-radius:12px;background:#151515}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.5s}.gallery-item:hover img{transform:scale(1.08)}
+		.cta{text-align:center;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),url("https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=2000&q=85") center/cover}.cta h2{font-size:48px;margin-bottom:15px}.cta p{color:#ccc;max-width:650px;margin:0 auto 30px}
+		.contact-box{max-width:800px;margin:auto;text-align:center}.contact-box p{color:#bbb;margin-bottom:25px}.contact-info{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}.contact-card{padding:25px;background:#151515;border-radius:15px}.contact-card strong{display:block;color:#d4af37;margin-bottom:7px}
+		footer{padding:30px 7%;text-align:center;background:#050505;border-top:1px solid #222;color:#888}
+		@media(max-width:800px){nav{padding:15px 5%}nav ul{gap:12px}nav a{font-size:11px}.about{grid-template-columns:1fr}.about-image{height:400px}.service-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-item{height:250px}.contact-info{grid-template-columns:1fr}.section-title h2{font-size:34px}.cta h2{font-size:35px}}
+		@media(max-width:500px){nav ul{display:none}.hero h1{font-size:52px}.gallery-grid{grid-template-columns:1fr}.gallery-item{height:350px}}
+	.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: block;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .gallery img {
+        height: 220px;
+        border-radius: 10px;
+    }
+
+    .gallery-buttons {
+        padding: 10px;
+        gap: 7px;
+    }
+
+    .gallery-buttons button {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+}
+.gallery img:hover {
+    transform: scale(1.03);
+}
+.gallery-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px 25px;
+}
+
+.gallery-buttons button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #222;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.gallery-buttons button:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+.gallery-buttons button {
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.gallery-buttons button:active {
+    transform: scale(0.96);
+}
+
+.gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.photo-viewer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.photo-viewer .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+.gallery-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px 25px;
+}
+
+.gallery-buttons button {
+    padding: 11px 20px;
+    border: 1px solid #444;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    background: #111;
+    color: white;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.gallery-buttons button:hover {
+    transform: translateY(-3px);
+    background: #333;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-buttons button:active {
+    transform: scale(0.96);
+}
+
+.gallery-buttons button:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+.photo-viewer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-viewer img {
+    max-width: 92%;
+    max-height: 88%;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.photo-viewer .close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: white;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.photo-viewer .close:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(90deg);
+}
+	</style>
+</head>
+<body>
+	<nav><div class="logo">MASHALLAH<span>.</span></div><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+	<section class="hero" id="home"><div class="hero-content"><small>Mashallah Photography</small><h1>Capturing<br><span>Moments.</span></h1><p>Professional photography and videography that turns unforgettable moments into memories you can keep forever.</p><div class="buttons"><a href="#gallery" class="btn btn-gold">View My Work</a><a href="#contact" class="btn btn-outline">Book a Shoot</a></div></div></section>
+	.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+	<section class="services" id="services"><div class="section-title"><small>What I Do</small><h2>My Services</h2></div><div class="service-grid"><div class="service-card"><div class="service-icon">📸</div><h3>Portrait Photography</h3><p>Creative portraits designed to show your personality, confidence and unique style.</p></div><div class="service-card"><div class="service-icon">🎉</div><h3>Events &amp; Birthdays</h3><p>Beautiful coverage of birthdays, celebrations, parties and memorable events.</p></div><div class="service-card"><div class="service-icon">🎥</div><h3>Videography</h3><p>Cinematic videos that preserve the atmosphere, emotions and story of your special day.</p></div></div></section>
+	
+<section id="gallery">
+
+    <div class="section-title">
+        <small>My Work</small>
+        <h2>Photography Gallery</h2>
+    </div>
+
+    <div class="gallery-buttons">
+        <button onclick="showCategory('all')">All Photos</button>
+        <button onclick="showCategory('studio')">Studio</button>
+        <button onclick="showCategory('picnic')">Picnic Photoshoot</button>
+        <button onclick="showCategory('outdoor')">Outdoor</button>
+        <button onclick="showCategory('indoor')">Indoor</button>
+        <button onclick="showCategory('portraits')">Portraits</button>
+        <button onclick="showCategory('graduation')">Graduation</button>
+    </div>
+
+    <div class="gallery" id="photoGallery"></div>
+
+</section>
+    <div class="gallery" id="photoGallery"></div>
+</section>
+	<section class="cta"><h2>Let's Create Something Beautiful</h2><p>Have a special moment coming up? Let's turn it into photographs you'll want to look at again and again.</p><a href="#contact" class="btn btn-gold">Book Your Shoot</a></section>
+	<section id="contact"><div class="section-title"><small>Get In Touch</small><h2>Let's Talk</h2></div><div class="contact-box"><p>Ready for your next photoshoot or event? Contact Mashallah Photography and let's discuss your project.</p><div class="contact-info"><div class="contact-card"><strong>📍 Location</strong>Malindi, Kenya</div><div class="contact-card"><strong>📱 WhatsApp</strong>Your WhatsApp Number</div><div class="contact-card"><strong>✉️ Email</strong>Your Email Address</div></div><div class="buttons"><a href="#" class="btn btn-gold">WhatsApp Me</a><a href="#" class="btn btn-outline">Instagram</a></div></div></section>
+	<footer>© 2026 <span>Mashallah Photography</span>. All Rights Reserved.</footer>
+<script>
+
+const categories = {
+
+    all: [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+        11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+        31, 32, 33, 34, 35
+    ],
+
+    studio: [
+        1, 3, 15, 24, 30
+    ],
+
+    picnic: [
+        6, 7, 8, 13, 16, 21
+    ],
+
+    outdoor: [
+        2, 18, 20, 26, 28, 32
+    ],
+
+    indoor: [
+        11, 14, 17, 19, 27, 34, 35
+    ],
+
+    portraits: [
+        5, 22, 23, 25, 29, 33
+    ],
+
+    graduation: [
+        12, 9, 10, 31
+    ]
+
+};
+
+
+const gallery = document.getElementById("photoGallery");
+
+
+function showCategory(category) {
+
+    gallery.innerHTML = "";
+
+    categories[category].forEach(function(number) {
+
+        const img = document.createElement("img");
+
+        img.src = `images/Photo%20(${number}).jpeg`;
+
+        img.alt = `Mashallah Photography - Photo ${number}`;
+
+        img.onclick = function() {
+            openPhoto(img.src);
+        };
+
+        gallery.appendChild(img);
+
+    });
+
+}
+
+
+/* Photo viewer */
+
+function openPhoto(src) {
+
+    const viewer = document.getElementById("photoViewer");
+
+    const viewerImage = document.getElementById("viewerImage");
+
+    viewerImage.src = src;
+
+    viewer.style.display = "flex";
+
+}
+
+
+function closePhoto() {
+
+    document.getElementById("photoViewer").style.display = "none";
+
+}
+
+
+/* Show all photos when the page opens */
+
+showCategory("all");
+
+</script>
+<div class="photo-viewer" id="photoViewer" onclick="closePhoto()">
+    <span class="close">&times;</span>
+    <img id="viewerImage" src="" alt="Large photo">
+</div>
+</body>
+</html>
